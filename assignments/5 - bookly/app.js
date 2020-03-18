@@ -55,22 +55,22 @@ function displayHidden(event) {
 
 search.addEventListener("keyup", displaySearch);
 function displaySearch(event) {
-   
+    event.preventDefault();
         searchRes = books.filter(book => (book.name.includes(search.value)));
-        createSearch(searchRes);
-        
-    
-}
+        // createSearch(searchRes);
+        createUI(searchRes);
+    }
 
-function createSearch(arr) {
-    let ul1 = document.querySelector("ul");
-    ul1.innerHTML = "";
-    banner.append(ul1);
-    searchRes.forEach(elem => {
-        let li = document.createElement("li");
-        li.textContent = elem.name;
-        ul1.append(li);
-    });
+// function createSearch(arr) {
+//     let ul1 = document.createElement("ul");
+//     banner.append(ul1);
+//     ul1.innerHTML = "";
+   
+//     searchRes.forEach(elem => {
+//         let li = document.createElement("li");
+//         li.textContent = elem.name;
+//         ul1.append(li);
+//     });
     
-}
+// }
    
