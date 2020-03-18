@@ -6,5 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Basic Counter App</title>
   </head>
-  <body></body>
+  <body>
+    <p class="output">0</p>
+    <span class="increment">+</span>
+    <span class="reset">Reset</span>
+    <span class="decrement">-</span>
+    <script>
+      let value = 0;
+      let output = document.querySelector(".output");
+      let incr = document.querySelector(".increment");
+      let decr = document.querySelector(".decrement");
+      let reset = document.querySelector(".reset");
+      incr.addEventListener("click", function() {
+        value+=1;
+        output.innerText = value;
+      });
+      decr.addEventListener("click", function() {
+        value-=1;
+        output.innerText = value;
+      });
+      reset.addEventListener("click", function() {
+        value = 0;
+        output.innerHTML = value;
+      });
+
+    </script>
+  </body>
 </html>
