@@ -5,7 +5,7 @@ let data = [
   {
     image:
       "http://data.mavo.io/portfolio/images/pasted-image-1494464667397.png",
-    name: "Carwash",
+    name: "Carwash", 
     category: "Painting"
   },
   {

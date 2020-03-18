@@ -1,10 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forms</title>
+    <style>
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 15rem;
+      }
+      input {
+        width: 100%;
+        padding: 1rem ;
+        border: none;
+        border-bottom: 2px solid grey;
+        font-size: 22px;
+        outline: none;
+      }
+      .btn {
+        padding: 12px 32px;
+        font-size: 20px;
+        background-color: transparent;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      input {
+        display: block;
+        margin: 10px 0;
+      }
+      .hidden {
+        visibility: hidden;
+        color: tomato;
+        text-align: left;
+      }
+    </style>
   </head>
-  <body></body>
+  <main>
+    <div class="container">
+      <form action="">
+        <input class="name" type="text" placeholder="Name">
+        <p class=" hidden name-hidden">*Name can't be empty</p>
+        <input class="email" type="email" placeholder="Email">
+        <p class=" hidden email-hidden">*Email can't be empty</p>
+        <input class = "password" type="password" placeholder="Password">
+        <p class=" hidden password-hidden">*Password can't be empty</p>
+        <button class="btn">Sign Up</button>
+      </form> 
+    </div>
+    
+  </main>
+    <script>
+      let form = document.querySelector("form");
+      let password = document.querySelector(".password");
+      let name = document.querySelector(".name");
+      let email = document.querySelector(".email");
+      let btn = document.querySelector(".btn");
+      let nameHidden = document.querySelector(".name-hidden");
+      let emailHidden = document.querySelector(".email-hidden");
+      let passwordHidden = document.querySelector(".password-hidden");
+      let inputField = false;
+      let emailField = false;
+      let passwordField = false;
+      let arr = [];
+      name.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if(name.value!=="") {
+          inputField = true;
+         
+        }
+      });
+      email.addEventListener("keyup", function(event){
+        event.preventDefault();
+        if(email.value!==""){
+          emailField = true;
+         
+        }
+      });
+      password.addEventListener("keyup", function(event){
+        event.preventDefault();
+        if(password.value!==""){
+          passwordField = true;
+         
+        }
+      });
+
+      btn.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (inputField == false) {
+          nameHidden.style.visibility = "visible";
+        } 
+        if (emailField == false) {
+            emailHidden.style.visibility = "visible";
+        }
+        if(passwordField== false) {
+          passwordHidden.style.visibility="visible";
+        }
+        else if(inputField&&emailField&&passwordField) {
+          form.style.display="none";
+          let p = document.createElement("p");
+          p.textContent = `You are ${name.value} Your email: ${email.value} and password is ${password.value}`;
+          p.classList.add("container");
+          document.body.append(p);
+        }
+      });
+    </script>
+</body>
 </html>
