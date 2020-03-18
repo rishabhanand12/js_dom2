@@ -1,9 +1,12 @@
 let books =[];
 let hidden = [];
+let searchRes = [];
+let banner = document.querySelector("#page-banner");
 let add = document.querySelector("#add-book > input[type='text']");
 let search = document.querySelector("#search-books >input[type ='text']");
 let checkBox = document.querySelector("#add-book > input[type='checkbox']");
 let ul = document.querySelector("ul");
+
 search.classList.add("search-field");
 add.classList.add("add-field");
 checkBox.addEventListener("click", displayHidden);
@@ -52,6 +55,22 @@ function displayHidden(event) {
 
 search.addEventListener("keyup", displaySearch);
 function displaySearch(event) {
-    books1 = books.filter(book => (book.name.includes(search.value)));
-    console.log(books1);
+   
+        searchRes = books.filter(book => (book.name.includes(search.value)));
+        createSearch(searchRes);
+        
+    
 }
+
+function createSearch(arr) {
+    let ul1 = document.querySelector("ul");
+    ul1.innerHTML = "";
+    banner.append(ul1);
+    searchRes.forEach(elem => {
+        let li = document.createElement("li");
+        li.textContent = elem.name;
+        ul1.append(li);
+    });
+    
+}
+   

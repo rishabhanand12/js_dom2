@@ -1,0 +1,138 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.text-align {
+    text-align: center;
+}
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+body, header {
+    background-color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.app {
+    box-shadow: 0px -10px 28px -16px rgba(0,0,0,0.75);
+}
+.app, .footer {
+    background-color: #ffffff;
+}
+.header {
+    padding: 32px 0;
+}
+.logo {
+    color:#EAD8D7;
+    font-size: 96px;
+}
+
+.input-field {
+    border:none;
+    font-size: 24px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.input-area {
+    border-bottom: 2px solid #f7f7f7;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 70px;
+    padding: 0 10px;
+}
+
+.universal-selector {
+    font-size: 24px;
+    color: #E6E6E6;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    box-shadow: 0px 10px 28px -16px rgba(0,0,0,0.75);
+    padding: 0 10px;
+    display: none;
+}
+.footer>button, .footer-btns>button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.task-list>li {
+    display: flex;
+    height: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    padding: 0 10px;
+    border-bottom: 2px solid #f7f7f7;
+}
+
+span {
+    cursor: pointer;
+}
+input[type = "checkbox"] {
+    cursor: pointer;
+}
